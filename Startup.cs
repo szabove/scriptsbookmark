@@ -62,7 +62,7 @@ namespace scriptsbookmarks
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{area=User}/{controller=User}/{action=Index}/{id?}");
+                    pattern: "{area=User}/{controller=Bookmark}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
