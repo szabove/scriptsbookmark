@@ -66,7 +66,6 @@ namespace ScriptsBookmark.Areas.User
             }
 
             return View(bookmark);
-
         }
 
 
@@ -84,6 +83,54 @@ namespace ScriptsBookmark.Areas.User
             }
 
             return View(bookmark);
+        }
+
+        //Details - GET
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var bookmark = await _db.Bookmark.FindAsync(id);
+            if (bookmark == null)
+            {
+                return NotFound();
+            }
+
+            return View(bookmark);
+        }
+
+        //Delete - GET
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var bookmark = await _db.Bookmark.FindAsync(id);
+            if (bookmark == null)
+            {
+                return NotFound();
+            }
+
+            return View(bookmark);
+        }
+
+        //Delete - POST
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletePOST(int id)
+        {
+            var bookmark = await _db.Bookmark.FindAsync(id);
+
+            if (bookmark == null)
+            {
+                return NotFound();
+            }
+
+            _db.Bookmark.Remove(bookmark);
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
 
     }
