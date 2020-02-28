@@ -1,0 +1,62 @@
+﻿@model ScriptsBookmark.Models.Bookmark
+@{
+    ViewData["Title"] = "Details";
+}
+
+<br />
+
+<h2 class="text-info">Bookmark Details</h2>
+<br />
+
+<form method="get" asp-action="Edit">
+    <div class="border backgroundWhite">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Title" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Title" readonly class="form-control" />
+            </div>
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Description" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                @Html.TextAreaFor(b => b.Description)
+            </div>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Code" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <code>@Html.TextAreaFor(b => b.Code)</code>
+            </div>
+            <span asp-validation-for="Code" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-5 offset-2">
+                <partial name="_DetailsAndBackToListButton" model="Model.Id" />
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: "lists",
+            menubar: 'file edit format',
+            readonly: 1
+        });
+    </script>
+
+
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
