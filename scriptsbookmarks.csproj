@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>aspnet-ScriptsBookmark-67A87466-6305-4683-AA3A-995AF7513CBF</UserSecretsId>
+    <UserSecretsId>aspnet-scriptsbookmarks-A4081555-1200-4940-ACB3-FC314C9EB9E4</UserSecretsId>
   </PropertyGroup>
 
 

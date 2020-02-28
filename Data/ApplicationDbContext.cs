@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ScriptsBookmark.Models;
 
-namespace ScriptsBookmark.Data
+namespace scriptsbookmarks.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -14,8 +14,7 @@ namespace ScriptsBookmark.Data
         {
         }
 
-
-        public DbSet<Bookmark> Bookmark { get; set; } 
+        public DbSet<Bookmark> Bookmark { get; set; }
 
     }
 }
