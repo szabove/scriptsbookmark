@@ -69,5 +69,22 @@ namespace ScriptsBookmark.Areas.User
 
         }
 
+
+        //Edit - POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Bookmark bookmark)
+        {
+            Debug.Print("Inside EDIT POST ACTION METHOD");
+            if (ModelState.IsValid)
+            {
+                _db.Update(bookmark);
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(bookmark);
+        }
+
     }
 }
