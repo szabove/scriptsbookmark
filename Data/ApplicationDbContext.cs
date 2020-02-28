@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ScriptsBookmark.Models;
 
 namespace ScriptsBookmark.Data
 {
@@ -12,5 +13,9 @@ namespace ScriptsBookmark.Data
             : base(options)
         {
         }
+
+
+        public DbSet<Bookmark> Bookmark { get; set; } 
+
     }
 }
