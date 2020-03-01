@@ -90,3 +90,11 @@ body {
     border-left: none;
     cursor: pointer;
 }
+
+#Description{
+    height: auto;
+}
+
+#Code {
+    width: 100%;
+}
