@@ -25,6 +25,11 @@ namespace ScriptsBookmark.Areas.User
         //Index - GET
         public async Task<IActionResult> Index()
         {
+            return View();
+        }
+
+        public async Task<IActionResult> Manage()
+        {
             return View(await _db.Bookmark.ToListAsync());
         }
 
