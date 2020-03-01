@@ -1,6 +1,6 @@
 ﻿@model ScriptsBookmark.Models.Bookmark
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
 <br />
@@ -9,13 +9,13 @@
 <br />
 
 <form method="post" asp-action="Edit">
-    <div class="border backgroundWhite">
+    <div class="backgroundWhite">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="Title" class="col-form-label"></label>
             </div>
-            <div class="col-5">
+            <div class="col-8 mb-2">
                 <input asp-for="Title" class="form-control" />
             </div>
             <span asp-validation-for="Title" class="text-danger"></span>
@@ -24,8 +24,8 @@
             <div class="col-2">
                 <label asp-for="Description" class="col-form-label"></label>
             </div>
-            <div class="col-5">
-                @Html.TextAreaFor(b => b.Description)
+            <div class="col-8">
+                @Html.TextAreaFor(b => b.Description, new { @id = "Description", @rows="10"} )
             </div>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
@@ -33,14 +33,14 @@
             <div class="col-2">
                 <label asp-for="Code" class="col-form-label"></label>
             </div>
-            <div class="col-5">
-                <code>@Html.DisplayFor(b => b.Code)</code>
-            </div>
+            <div class="col-8">
+                <pre><code>@Html.TextAreaFor(b => b.Code, new { @id = "Code", @rows="10"} )</code></pre>
+            </div>            
             <span asp-validation-for="Code" class="text-danger"></span>
         </div>
         <div class="form-group row">
             <div class="col-5 offset-2">
-                @*<partial name="_CreateAndBackToListButton" />*@
+                <partial name="_EditAndBackToListButton" model="Model.Id" />
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
 
     <script>
         tinymce.init({
-            selector: 'textarea',
+            selector: '#Description',
             plugins: "lists",
             menubar: 'file edit format'
         });

@@ -9,34 +9,30 @@
 <br />
 
 <form method="get" asp-action="Edit">
-    <div class="border backgroundWhite">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="backgroundWhite">
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="Title" class="col-form-label"></label>
             </div>
-            <div class="col-5">
+            <div class="col-8 mb-2">
                 <input asp-for="Title" readonly class="form-control" />
             </div>
-            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="Description" class="col-form-label"></label>
             </div>
-            <div class="col-5">
-                @Html.TextAreaFor(b => b.Description)
+            <div class="col-8">
+                @Html.DisplayFor(b => b.Description, new { @id = "Description", @readonly="true"} )
             </div>
-            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="Code" class="col-form-label"></label>
             </div>
-            <div class="col-5">
-                <code>@Html.TextAreaFor(b => b.Code)</code>
+            <div class="col-8">
+                <pre><code>@Html.DisplayFor(b => b.Code, new { @id="Code", @readonly="true"})</code></pre>
             </div>
-            <span asp-validation-for="Code" class="text-danger"></span>
         </div>
         <div class="form-group row">
             <div class="col-5 offset-2">
@@ -45,18 +41,3 @@
         </div>
     </div>
 </form>
-@section Scripts{
-
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: "lists",
-            menubar: 'file edit format',
-            readonly: 1
-        });
-    </script>
-
-
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
-}
