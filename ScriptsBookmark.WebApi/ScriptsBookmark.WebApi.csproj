@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44366</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -246,6 +246,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ScriptsBookmark.Common\ScriptsBookmark.Common.csproj">
+      <Project>{0f328571-752b-42ad-ae12-079f8e4e148c}</Project>
+      <Name>ScriptsBookmark.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScriptsBookmark.Model.Common\ScriptsBookmark.Model.Common.csproj">
+      <Project>{8b6605ea-f4f3-47d9-9afe-a343a6477c37}</Project>
+      <Name>ScriptsBookmark.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScriptsBookmark.Service.Common\ScriptsBookmark.Service.Common.csproj">
+      <Project>{3fd7cff2-7d51-4391-8701-9832dcd23c93}</Project>
+      <Name>ScriptsBookmark.Service.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -264,7 +278,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58578</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58578/</IISUrl>
+          <IISUrl>https://localhost:44366/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
