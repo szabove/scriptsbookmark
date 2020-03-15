@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptsBookmark.Service", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptsBookmark.Service.Common", "..\ScriptsBookmark.Service.Common\ScriptsBookmark.Service.Common.csproj", "{3FD7CFF2-7D51-4391-8701-9832DCD23C93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptsBookmark.DAL.Common", "ScriptsBookmark.DAL.Common\ScriptsBookmark.DAL.Common.csproj", "{FD401CDE-566A-476D-81D1-07E4DD2C61B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{3FD7CFF2-7D51-4391-8701-9832DCD23C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FD7CFF2-7D51-4391-8701-9832DCD23C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FD7CFF2-7D51-4391-8701-9832DCD23C93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD401CDE-566A-476D-81D1-07E4DD2C61B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD401CDE-566A-476D-81D1-07E4DD2C61B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD401CDE-566A-476D-81D1-07E4DD2C61B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD401CDE-566A-476D-81D1-07E4DD2C61B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
